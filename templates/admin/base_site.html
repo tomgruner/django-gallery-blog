@@ -1,0 +1,29 @@
+{% extends "admin/base.html" %}
+
+{% block extrahead %}
+   {{ block.super }}
+	
+{% endblock %}
+
+{% block extrastyle %}
+
+
+<!--  Hide the old news app from the homepage -->
+<style type="text/css">
+
+	/* Make the admin rows contain their child widgets */
+	fieldset.module .row {
+    	overflow: hidden;
+	}
+	
+	.caption textarea {
+		width:400px;
+		
+	}
+	
+	
+	
+</style>
+
+
+{% endblock %}

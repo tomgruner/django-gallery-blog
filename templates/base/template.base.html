@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="author" content="Martina Vanda" />
+		<meta name="description" content="{% block meta_description %}Martina Vanda{% endblock %}" />
+		<meta name="keywords" content="{% block meta_keywords %}Martina Vanda{% endblock %}" />
+		<title>{%block meta_title %} Martina Vanda {% endblock %} </title>
+		
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL}}base/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL}}content/css/content.css" />
+
+	</head>
+	
+	<body class="{% block body_class%}{% endblock%}">
+		
+	<div id="holder">
+		<div id="sidebar">
+			<h2 id="pageTitle">
+				<a href="/">martina vanda</a>
+			</h2>
+			
+			{% autoescape off %}
+				{{block_areas.sidebar.render}}
+			{% endautoescape %}
+		</div>	
+		
+		<div id="content">
+			{% block content %}
+			{% endblock %}
+		</div>		
+	
+	</div>		
+		
+	</body>
+</html>

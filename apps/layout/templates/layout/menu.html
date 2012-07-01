@@ -1,0 +1,10 @@
+<div class="menu {{menu.style}}">
+	{% if menu.show_title %}
+		<h3 class="menuTitle">{{menu.title}}</h3>
+	{% endif %}
+	<ul>
+		{%for menu_item in menu.menuitem_set.all%}
+			<li><a href="{{menu_item.links_to}}" target="{{menu_item.target}}">{{menu_item.text}}</a></li>
+		{% endfor %}
+	</ul>
+</div>

@@ -1,0 +1,14 @@
+A simple django gallery blog site.
+
+To install, you will need to create a local_settings.py file with the following settings:
+
+DATABASES 
+ADMINS
+MANAGERS
+DEBUG
+TEMPLATE_DEBUG
+GRAPPELLI_ADMIN_TITLE 
+
+And get install the requirements using:
+
+pip install -r requirements.txt

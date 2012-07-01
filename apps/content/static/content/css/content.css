@@ -1,0 +1,47 @@
+.entryPreview {
+	background-color:#fff;
+	padding:20px 10px;
+	width:300px;
+	margin-bottom:20px;
+}
+
+
+
+
+.entryPreviewTitle a {
+	font-weight:normal;
+	color:#444;
+	font-size:12px;
+	text-decoration:none;
+}
+
+.entryFull {
+	background-color:#fff;
+	padding:25px;
+	width:600px;
+}
+
+.entryFullTitle {
+	font-size:15px;
+	color:#666;
+	font-weight:normal;
+}
+
+.entryFullImage {
+	margin:0px auto;
+	padding:25px 0px;
+}
+
+.entryFullImage img {
+	
+}
+
+
+.entryFullImageCaption {
+	font-weight:normal;
+	font-size:12px;
+	text-align:right;
+	color:#777;
+	margin-top:0px;
+	padding-top:2px;
+}

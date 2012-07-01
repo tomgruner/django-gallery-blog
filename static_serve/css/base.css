@@ -1,0 +1,20 @@
+body {
+	background-color:#E8E8E8;
+		
+}
+
+#holder {
+	width:960px;
+}
+
+#sidebar {
+	float:left;
+	width:250px;
+	
+}
+
+
+#content {
+	float:left;
+	width:710px;
+}

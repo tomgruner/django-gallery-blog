@@ -1,0 +1,105 @@
+body {
+	background-color:#E8E8E8;
+	font-family:Arial, Helvetica, sans-serif;	
+	margin:0px;
+	padding:0px;
+	font-size:10pt;
+}
+
+.entry #sidebar {
+	width:350px;
+}
+
+#holder {
+	
+	padding:60px 10px 10px 10px;
+	overflow:hidden;
+}
+
+#sidebar {
+	float:left;
+	width:250px;
+	
+}
+
+#pageTitle {
+	margin:0px;
+	padding:0px;
+}
+
+#pageTitle a {
+	font-weight:normal;
+	font-size:13px;
+	text-decoration: none;
+	color:#444444;
+	margin:0px;
+	padding:0px;
+}
+
+#content {
+	float:left;
+	width:710px;
+}
+
+
+
+#tagList li, #tagList {
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+#tagList {
+	margin:25px 0px;
+}
+
+#tagList a, .orange a {
+	text-decoration:none;
+	color:#E9943A;
+	display:block;
+	line-height:1.1em;
+	font-size:11pt;
+	font-family: normal,'American Typewriter',Courier,'Courier New',Verdana,sans-serif;
+}
+
+
+.list_column {
+	width:340px;
+	float:left;
+}
+
+.menu {
+	margin:25px 0px;
+}
+
+.menu ul, .menu li {
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+
+.menu h3 {
+	font-size:10pt;
+	margin:0px;
+	padding:0px;
+	font-weight:normal;
+}
+
+.orange h3 {
+	color:#D2682A;
+	font-family: normal,'American Typewriter',Courier,'Courier New',Verdana,sans-serif;
+
+}
+
+.black h3 {
+	color:#444444;
+}
+
+.black a {
+	text-decoration: none;
+	color:#000;
+}
+
+.black a:hover {
+	color:#666666;
+}

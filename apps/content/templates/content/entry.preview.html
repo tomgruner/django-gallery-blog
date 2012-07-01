@@ -1,0 +1,17 @@
+{% load thumbnail %}
+
+<div class="entryPreview">
+	{% if entry.preview_image %}
+		{% thumbnail entry.preview_image "300" crop="center" as im %}
+			<a href="{{entry.get_absolute_url}}">
+		    	<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+		    </a>
+		{% endthumbnail %}
+	{% endif %}
+	<h3 class="entryPreviewTitle">
+		<a href="{{entry.get_absolute_url}}">{{entry.title}}</a>
+	</h3>
+</div>
+
+
+

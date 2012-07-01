@@ -1,0 +1,34 @@
+{% extends "base/template.base.html" %}
+{% load thumbnail %}
+
+{%block meta_title %}{{entry.title}} - Martina Vanda {%endblock%}
+{% block meta_keywords %}{{entry.seo_keywords}}{% endblock %}
+{% block meta_description %}{{entry.seo_description}}{% endblock %}
+
+{% block body_class%}entry{% endblock%}
+
+{% block content %}
+	
+	<div class="entryFull">
+		
+		<h1 class="entryFullTitle">
+			{{entry.title}}
+		</h1>
+		
+		{% for entry_image in entry.image_set.all %}
+			{% thumbnail entry_image.image "600x600" upscale=False as im %}
+				<div class="entryFullImage" style="width:{{im.width }}px">
+	
+			    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+				<h2 class="entryFullImageCaption">{{entry_image.caption|linebreaksbr}}</h2>
+			</div>
+			{% endthumbnail %}
+	
+		{% endfor %}
+		
+		{% autoescape off %}
+			{{entry.main_content}}
+		{% endautoescape %}
+		
+	</div>
+{% endblock %}
