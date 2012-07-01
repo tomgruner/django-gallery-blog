@@ -87,7 +87,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'mirto.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -103,8 +103,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.core.context_processors.request',
     'django.contrib.messages.context_processors.messages',
-    'mirto.apps.content.context_processors.tags',
-    'mirto.apps.layout.context_processors.block_areas_cp'
+    'apps.content.context_processors.tags',
+    'apps.layout.context_processors.block_areas_cp'
 )
 
 INSTALLED_APPS = (
@@ -118,8 +118,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
-    'mirto.apps.content',
-    'mirto.apps.layout',
+    'apps.content',
+    'apps.layout',
 )
 
 # A sample logging configuration. The only tangible logging
