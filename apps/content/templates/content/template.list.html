@@ -1,0 +1,13 @@
+{% extends "base/template.base.html" %}
+
+
+{% block content %}
+
+<div class="entries">
+	{% for entry in entries %}
+		{% include 'content/entry.preview.html' %}
+	{% endfor %}
+</div>
+
+
+{% endblock %}
