@@ -2,7 +2,7 @@
 
 <div class="entryPreview">
 	{% if entry.preview_image %}
-		{% thumbnail entry.preview_image "x600" crop="center" as im %}
+		{% thumbnail entry.preview_image "x500" crop="center" as im %}
 			<a href="{{entry.get_absolute_url}}">
 		    	<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
 		    </a>

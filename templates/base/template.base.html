@@ -16,10 +16,10 @@
         $(function() {
         	var totalEntryWidth = 0;
         	$('.entryPreview').each(function(index, entry) {
-        		totalEntryWidth += $(this).width() + 40;
+        		totalEntryWidth += $(this).width() + 25;
         	});
 
-        	$('#content').width(totalEntryWidth).css('padding', '60px 280px 0px 0px');
+        	$('#content').width(totalEntryWidth).css('padding', '60px 0px 0px 280px');
         	$('#sidebar').css('position', 'absolute');
         	$('#holder').css('position', 'relative');
         	$('body, html').css('overflow' , 'hidden');
