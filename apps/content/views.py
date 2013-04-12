@@ -15,7 +15,7 @@ def single_entry(request, slug):
         )
 
 
-def list_by_columns(request, tag_slug=None):
+def list_view(request, tag_slug=None):
     
     if tag_slug is not None:
         #single tag
@@ -38,9 +38,10 @@ def list_by_columns(request, tag_slug=None):
             column = 1;
     
     return render_to_response(
-        'content/template.list_by_columns.html',
+        'content/template.list.html',
         {'entries_by_column': entries_by_column,
-         'columns'  :   columns
+         'columns'  :   columns,
+         'entries' : entries
          },
         context_instance=RequestContext(request)
         )

@@ -1,25 +1,29 @@
 body {
-	background-color:#E8E8E8;
+	background-color:#fff;
 	font-family:Arial, Helvetica, sans-serif;	
 	margin:0px;
 	padding:0px;
 	font-size:10pt;
 }
 
+h1 {
+	font-weight:normal;
+}
+
 .entry #sidebar {
 	width:350px;
+
 }
 
 #holder {
-	
-	padding:60px 10px 10px 10px;
 	overflow:hidden;
 }
 
 #sidebar {
-	float:left;
-	width:250px;
-	
+	width:260px;
+	background-color: #fff;
+	height:900px;
+	padding:0px 10px;
 }
 
 #pageTitle {
@@ -36,12 +40,9 @@ body {
 	padding:0px;
 }
 
-#content {
-	float:left;
-	width:710px;
+#contentHolder {
+	overflow:auto;
 }
-
-
 
 #tagList li, #tagList {
 	list-style:none;

@@ -148,8 +148,10 @@ LOGGING = {
 
 LANGUAGES = (  
     ('en', 'English'),
-    ('it', 'Italian'),
 )
+
+
+
 
 
 from local_settings import *

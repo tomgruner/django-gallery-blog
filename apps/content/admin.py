@@ -15,7 +15,7 @@ class ImageInlineModelAdmin(AdminImageMixin, admin.TabularInline):
 
 class EntryAdmin(AdminImageMixin, admin.ModelAdmin):
     inlines = [ImageInlineModelAdmin]
-    list_display = ('slug', 'title', 'date', 'is_published', 'include_on_front_page')
+    list_display = ('slug', 'title', 'tag_list', 'date', 'is_published', 'include_on_front_page')
     date_hierarchy = 'date'
     search_fields = ('title', 'seo_keywords', 'seo_description')
     prepopulated_fields = {"slug": ("title",)}

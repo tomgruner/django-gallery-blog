@@ -89,6 +89,9 @@ class Entry(models.Model):
         help_text='A short description for Google'
         )
     
+    def tag_list(self):
+        return ", ".join(self.tags.values_list('tag', flat=True))
+
     def get_absolute_url(self):
         return '/' + self.slug
     
