@@ -27,7 +27,7 @@
         		$('#contentHolder').width($(window).width() - 305);
 
         	};
-        	
+
         	$(window).resize(sizeElements);
         	sizeElements();
         });
@@ -44,6 +44,10 @@
 				{% endautoescape %}
 			</div>	
 			<h2 id="pageTitle">{% block pageTitle %}{% endblock %}</h2>
+			<div id="scrollControls">
+				<div id="scrollPrev"></div>
+				<div id="scrollNext"></div>
+			</div>
 			{% block content %}
 			{% endblock %}
 		</div>				

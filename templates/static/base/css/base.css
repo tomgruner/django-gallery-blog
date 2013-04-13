@@ -1,9 +1,14 @@
 body {
 	background-color:#fff;
-	font-family:Arial, Helvetica, sans-serif;	
+	font-family: "Times", serif;
 	margin:0px;
 	padding:0px;
 	font-size:10pt;
+}
+
+pre {
+	font-family: "Times", serif;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,8 +16,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 a {
-	color:#777;
+	color:#000;
 	text-decoration:none;
+	font-size:16px;
+}
+
+
+
+img {
+	border:0px;
 }
 
 
@@ -27,10 +39,11 @@ h1 a {
 #pageTitle {
 	
 	position: absolute;
-	top:5px;
+	top:17px;
 	left:280px;
-	color:#888;
+	color:#000;
 	font-weight: normal;
+	font-size:14px;
 }
 
 #pageTitle a {
@@ -54,6 +67,41 @@ h1 a {
 	position:relative;
 }
 
+#scrollControls {
+	position: absolute;
+	top: 30px;
+	right:20px;
+	width:45px;
+	height:20px;
+}
+
+#scrollPrev {
+	width:20px;
+	height:20px;
+	background-image:url('../images/prev.png');
+	background-position: top left;
+	position: absolute;
+	top:0px;
+	left:0px;
+	cursor: pointer;
+}
+
+#scrollPrev:hover, #scrollNext:hover {
+	background-position: bottom left;
+}
+
+
+#scrollNext {
+	width:20px;
+	height:20px;
+	background-image:url('../images/next.png');
+	background-position: top left;
+	position: absolute;
+	top:0px;
+	left:25px;
+	cursor: pointer;
+}
+
 #tagList li, #tagList {
 	list-style:none;
 	margin:0px;
@@ -65,10 +113,9 @@ h1 a {
 
 #tagList a, .orange a {
 	text-decoration:none;
-	color:#E9943A;
+	color:#000;
 	display:block;
 	line-height:1.1em;
-	font-size:11pt;
 }
 
 
