@@ -22,13 +22,12 @@
 
         	$('#content').width(totalEntryWidth)
 
-        	$('#contentHolder').width($(window).width() - 305);
-
-
-
         	var sizeElements = function() {
         		$('#holder').width($(window).width()).height($(window).height());
+        		$('#contentHolder').width($(window).width() - 305);
+
         	};
+        	
         	$(window).resize(sizeElements);
         	sizeElements();
         });

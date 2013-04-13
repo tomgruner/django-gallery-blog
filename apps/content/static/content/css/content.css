@@ -9,7 +9,7 @@
 #entryDescriptionBox {
 	width:700px;
 	position: absolute;
-	top:640px;
+	top:665px;
 	left:280px;
 }
 
@@ -38,9 +38,7 @@
 	padding:25px 0px;
 }
 
-.entryFullImage img {
-	
-}
+
 
 
 .entryFullImageCaption {
