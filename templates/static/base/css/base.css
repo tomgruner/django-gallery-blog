@@ -44,6 +44,13 @@ h1 a {
 
 #contentHolder {
 	overflow:auto;
+	position: absolute;
+	left:280px;
+	top:60px;
+}
+
+#holder {
+	position:relative;
 }
 
 #tagList li, #tagList {

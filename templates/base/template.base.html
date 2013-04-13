@@ -20,10 +20,11 @@
         		totalEntryWidth += $(this).width() + 40;
         	});
 
-        	$('#content').width(totalEntryWidth).css('padding', '60px 0px 0px 280px');
+        	$('#content').width(totalEntryWidth)
 
-        	$('#holder').css('position', 'relative');
+        	$('#contentHolder').width($(window).width() - 280);
 
+        	
 
         	var sizeElements = function() {
         		$('#holder').width($(window).width()).height($(window).height());
@@ -36,22 +37,16 @@
 	</head>
 	
 	<body class="{% block body_class%}{% endblock%}">
-		
-	<div id="holder">
-		<div id="sidebar">
-			{% autoescape off %}
-				{{block_areas.sidebar.render}}
-			{% endautoescape %}
-		</div>	
-		<h2 id="pageTitle">{% block pageTitle %}{% endblock %}</h2>
-		<div id="contentHolder">
-			<div id="content">
-				{% block content %}
-				{% endblock %}
-				<div style="clear:both;"></div>
-			</div>		
-		</div>
-	</div>		
-		
+			
+		<div id="holder">
+			<div id="sidebar">
+				{% autoescape off %}
+					{{block_areas.sidebar.render}}
+				{% endautoescape %}
+			</div>	
+			<h2 id="pageTitle">{% block pageTitle %}{% endblock %}</h2>
+			{% block content %}
+			{% endblock %}
+		</div>				
 	</body>
 </html>

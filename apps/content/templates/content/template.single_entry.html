@@ -11,25 +11,35 @@
 
 {% block content %}
 	
-	<div class="entries">
+
+<div id="contentHolder">
+	<div id="content">
+		<div class="entries">
+
+
+			{% for entry_image in entry.image_set.all %}
+				{% thumbnail entry_image.image "x500" upscale=False as im %}
+				<div class="contentBox" style="width:{{im.width }}px">
 		
+				    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+					<h2 class="entryFullImageCaption">{{entry_image.caption|linebreaksbr}}</h2>
+				</div>
+				{% endthumbnail %}
+		
+			{% endfor %}
 
-		{% for entry_image in entry.image_set.all %}
-			{% thumbnail entry_image.image "x500" upscale=False as im %}
-			<div class="contentBox" style="width:{{im.width }}px">
-	
-			    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
-				<h2 class="entryFullImageCaption">{{entry_image.caption|linebreaksbr}}</h2>
-			</div>
-			{% endthumbnail %}
-	
-		{% endfor %}
+		</div>
+					
+		<div style="clear:both;"></div>
+	</div>		
+</div>
 
-	</div>
 
-	<div id="entryDescriptionBox" >
-			{% autoescape off %}
-				<pre>{{entry.main_content}}</pre>
-			{% endautoescape %}
-	</div>
+
+<div id="entryDescriptionBox" >
+		{% autoescape off %}
+			<pre>{{entry.main_content}}</pre>
+		{% endautoescape %}
+</div>
+
 {% endblock %}
