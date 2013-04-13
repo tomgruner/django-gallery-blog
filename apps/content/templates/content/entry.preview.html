@@ -3,7 +3,7 @@
 <div class="contentBox">
 	{% if entry.preview_image %}
 		{% thumbnail entry.preview_image "x500" as im %}
-			<a href="{{entry.get_absolute_url}}">
+			<a href="{{entry.get_absolute_url}}?tag_slug={{tag_slug}}">
 		    	<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
 		    </a>
 		{% endthumbnail %}

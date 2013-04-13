@@ -8,9 +8,12 @@ def single_entry(request, slug):
     
     entry = get_object_or_404(models.Entry, slug=slug)
     
+    tag_slug = request.GET.get('tag_slug', None)
+
     return render_to_response(
         'content/template.single_entry.html',
-        {'entry': entry},
+        {'entry': entry,
+         'tag_slug' : tag_slug},
         context_instance=RequestContext(request)
         )
 
@@ -44,7 +47,8 @@ def list_view(request, tag_slug=None):
         {'entries_by_column': entries_by_column,
          'columns'  :   columns,
          'entries' : entries,
-         'page_title' : page_title
+         'page_title' : page_title,
+         'tag_slug' : tag_slug
          },
         context_instance=RequestContext(request)
         )

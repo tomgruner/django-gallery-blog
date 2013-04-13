@@ -18,15 +18,15 @@ class Tag(models.Model):
     )
 
     @staticmethod
-    def render_list():
+    def render_list(context):
         
-        c = Context({
-            'tag_list' : Tag.objects.filter(show_in_tag_list = True)
-            })
+       
+        context['tag_list']  = Tag.objects.filter(show_in_tag_list = True)
+      
         
         t = get_template('content/tag.list.html')
         
-        return t.render(c)
+        return t.render(context)
 
     def __unicode__(self):
         return unicode(self.tag)

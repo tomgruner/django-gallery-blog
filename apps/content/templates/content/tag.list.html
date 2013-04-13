@@ -1,5 +1,16 @@
 <ul id="tagList">
 	{% for tag in tag_list %}
-	<li><a href="/tag/{{tag.slug}}">{{tag.tag}}</a></li>
+	<li><a href="/tag/{{tag.slug}}">{{tag.tag}}</a>
+
+	{% if tag_slug and tag.slug == tag_slug %}
+		
+		{% for tag_entry in tag.entry_set.all %}
+			 <a class="{% if tag_entry == entry %}currentTagEntry{% endif%}"
+				href="{{tag_entry.get_absolute_url}}?tag_slug={{tag_slug}}"> - {{ tag_entry.title }}</a> 
+		{% endfor %}
+		<br>
+	{% endif %}
+
+	</li>
 	{% endfor %}
 </ul>

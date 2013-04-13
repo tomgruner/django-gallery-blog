@@ -1,3 +1,4 @@
+{% load block_areas %}
 <!DOCTYPE html>
 <html>
 
@@ -30,6 +31,27 @@
 
         	$(window).resize(sizeElements);
         	sizeElements();
+
+        	var scrollInterval = false;
+        	$(document).mouseup(function() {
+        		try {
+        			clearInterval(scrollInterval);
+        		} catch(e) {}
+        	});
+
+        	$('#scrollPrev').mousedown(function(){
+        		scrollInterval = setInterval(function() {
+        			$('#contentHolder').scrollLeft($('#contentHolder').scrollLeft()-10);
+        		}, 20);
+        	});
+
+
+        	$('#scrollNext').mousedown(function(){
+        		scrollInterval = setInterval(function() {
+        			$('#contentHolder').scrollLeft($('#contentHolder').scrollLeft()+10);
+        		}, 20);
+        	});
+
         });
 
         </script>
@@ -39,8 +61,9 @@
 			
 		<div id="holder">
 			<div id="sidebar">
+
 				{% autoescape off %}
-					{{block_areas.sidebar.render}}
+					{% render_block_area 'sidebar' %}
 				{% endautoescape %}
 			</div>	
 			<h2 id="pageTitle">{% block pageTitle %}{% endblock %}</h2>

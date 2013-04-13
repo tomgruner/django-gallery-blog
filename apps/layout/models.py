@@ -14,7 +14,7 @@ class Menu(models.Model):
     def item_count(self):
         return self.menuitem_set.count()
     
-    def render(self):
+    def render(self, context):
         c = Context({'menu' : self})
         return get_template('layout/menu.html').render(c)
     
@@ -65,10 +65,10 @@ class MenuItem(models.Model):
 class BlockArea(models.Model):
     key = models.CharField(max_length=100)
 
-    def render(self):
+    def render(self, context):
         html = ''
         for block in self.block_set.all():
-            html += '<div class="block">' + block.render() + '</div>'
+            html += '<div class="block">' + block.render(context) + '</div>'
         
         return html
     
@@ -88,13 +88,13 @@ class Block(models.Model):
     
     order = models.IntegerField()
     
-    def render(self):
+    def render(self, context):
         if self.block_type == 'html':
             return self.html
         elif self.block_type == 'tag_list':
-            return content_models.Tag.render_list()
+            return content_models.Tag.render_list(context=context)
         elif self.block_type == 'menu':
-            return self.menu.render()
+            return self.menu.render(context=context)
        
     def __unicode__(self):
         if self.block_type == 'html':

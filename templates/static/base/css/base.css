@@ -69,10 +69,11 @@ img {
 
 #scrollControls {
 	position: absolute;
-	top: 30px;
+	top: 25px;
 	right:20px;
 	width:45px;
 	height:20px;
+	z-index: 10;
 }
 
 #scrollPrev {
@@ -118,6 +119,9 @@ img {
 	line-height:1.1em;
 }
 
+#tagList a.currentTagEntry {
+	color:#999;
+}
 
 .list_column {
 	width:340px;
