@@ -6,9 +6,15 @@ body {
 	font-size:10pt;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
 	font-weight:normal;
 }
+
+h1 a {
+	color:#777;
+	text-decoration:none;
+}
+
 
 #sidebar {
 	width:260px;
