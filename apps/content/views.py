@@ -21,9 +21,11 @@ def list_view(request, tag_slug=None):
         #single tag
         tag = get_object_or_404(models.Tag, slug=tag_slug)
         entries = tag.entry_set.filter(is_published=True)
+        page_title = tag.tag
     else:
         #home page
         entries = models.Entry.objects.filter(is_published=True, include_on_front_page=True)
+        page_title = ''
     
     column = 1
     entries_by_column = []
@@ -41,7 +43,8 @@ def list_view(request, tag_slug=None):
         'content/template.list.html',
         {'entries_by_column': entries_by_column,
          'columns'  :   columns,
-         'entries' : entries
+         'entries' : entries,
+         'page_title' : page_title
          },
         context_instance=RequestContext(request)
         )

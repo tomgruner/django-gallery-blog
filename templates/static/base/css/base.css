@@ -10,25 +10,21 @@ h1 {
 	font-weight:normal;
 }
 
-.entry #sidebar {
-	width:350px;
-
-}
-
-#holder {
-	overflow:hidden;
-}
-
 #sidebar {
 	width:260px;
 	background-color: #fff;
 	height:900px;
 	padding:0px 10px;
+	position: absolute;
 }
 
 #pageTitle {
-	margin:0px;
-	padding:0px;
+	
+	position: absolute;
+	top:5px;
+	left:280px;
+	color:#888;
+	font-weight: normal;
 }
 
 #pageTitle a {
@@ -59,7 +55,6 @@ h1 {
 	display:block;
 	line-height:1.1em;
 	font-size:11pt;
-	font-family: normal,'American Typewriter',Courier,'Courier New',Verdana,sans-serif;
 }
 
 

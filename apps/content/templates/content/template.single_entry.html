@@ -7,17 +7,16 @@
 
 {% block body_class%}entry{% endblock%}
 
+{% block pageTitle%} {{entry.title}} {% endblock%}
+
 {% block content %}
 	
-	<div class="entryFull">
+	<div class="entries">
 		
-		<h1 class="entryFullTitle">
-			{{entry.title}}
-		</h1>
-		
+
 		{% for entry_image in entry.image_set.all %}
-			{% thumbnail entry_image.image "600x600" upscale=False as im %}
-				<div class="entryFullImage" style="width:{{im.width }}px">
+			{% thumbnail entry_image.image "x500" upscale=False as im %}
+			<div class="contentBox" style="width:{{im.width }}px">
 	
 			    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
 				<h2 class="entryFullImageCaption">{{entry_image.caption|linebreaksbr}}</h2>
@@ -25,10 +24,12 @@
 			{% endthumbnail %}
 	
 		{% endfor %}
-		
-		{% autoescape off %}
-			{{entry.main_content}}
-		{% endautoescape %}
-		
+
+	</div>
+
+	<div id="entryDescriptionBox" >
+			{% autoescape off %}
+				{{entry.main_content}}
+			{% endautoescape %}
 	</div>
 {% endblock %}

@@ -1,8 +1,8 @@
 {% load thumbnail %}
 
-<div class="entryPreview">
+<div class="contentBox">
 	{% if entry.preview_image %}
-		{% thumbnail entry.preview_image "x500" crop="center" as im %}
+		{% thumbnail entry.preview_image "x500" as im %}
 			<a href="{{entry.get_absolute_url}}">
 		    	<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
 		    </a>

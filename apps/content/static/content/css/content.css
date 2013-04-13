@@ -1,12 +1,17 @@
-.entryPreview {
+.contentBox {
 	background-color:#fff;
-	padding:20px 10px;
+	padding:20px 10px 20px 0px;
 	height:700px;
 	margin-right:20px;
 	float:left;
 }
 
-
+#entryDescriptionBox {
+	width:700px;
+	position: absolute;
+	top:620px;
+	left:280px;
+}
 
 
 .entryPreviewTitle a {
