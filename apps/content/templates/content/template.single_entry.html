@@ -7,10 +7,61 @@
 
 {% block body_class%}entry{% endblock%}
 
+
+{% block javascript %}
+	<script type="text/javascript">
+
+        $(function() {
+
+        	var totalEntryWidth = 0;
+        	$('.contentBox').each(function(index, entry) {
+        		totalEntryWidth += $(this).width() + 40;
+        	});
+
+        	$('#content').width(totalEntryWidth)
+
+        	var sizeElements = function() {
+        		$('#holder').width($(window).width()).height($(window).height());
+        		$('#contentHolder').width($(window).width() - 305);
+
+        	};
+
+        	$(window).resize(sizeElements);
+        	sizeElements();
+
+        	var scrollInterval = false;
+        	$(document).mouseup(function() {
+        		try {
+        			clearInterval(scrollInterval);
+        		} catch(e) {}
+        	});
+
+        	$('#scrollPrev').mousedown(function(){
+        		scrollInterval = setInterval(function() {
+        			$('#contentHolder').scrollLeft($('#contentHolder').scrollLeft()-10);
+        		}, 20);
+        	});
+
+
+        	$('#scrollNext').mousedown(function(){
+        		scrollInterval = setInterval(function() {
+        			$('#contentHolder').scrollLeft($('#contentHolder').scrollLeft()+10);
+        		}, 20);
+        	});
+
+        });
+
+     </script>
+{% endblock %}
+
 {% block pageTitle%} {{entry.title}} {% endblock%}
 
 {% block content %}
 	
+<div id="scrollControls">
+	<div id="scrollPrev"></div>
+	<div id="scrollNext"></div>
+</div>
 
 <div id="contentHolder">
 	<div id="content">
@@ -38,8 +89,11 @@
 
 <div id="entryDescriptionBox" >
 		{% autoescape off %}
-			<pre>{{entry.main_content}}</pre>
+			{{entry.main_content}}
 		{% endautoescape %}
 </div>
+
+
+<div id="entryLikeButton" class="fb-like" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"></div>
 
 {% endblock %}

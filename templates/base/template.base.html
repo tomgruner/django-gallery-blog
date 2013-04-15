@@ -12,49 +12,10 @@
 		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL}}base/css/base.css" />
 		<link rel="stylesheet" type="text/css" href="{{ STATIC_URL}}content/css/content.css" />
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript">
+        
+		{% block javascript %}
+		{% endblock %}
 
-        $(function() {
-
-        	var totalEntryWidth = 0;
-        	$('.contentBox').each(function(index, entry) {
-        		totalEntryWidth += $(this).width() + 40;
-        	});
-
-        	$('#content').width(totalEntryWidth)
-
-        	var sizeElements = function() {
-        		$('#holder').width($(window).width()).height($(window).height());
-        		$('#contentHolder').width($(window).width() - 305);
-
-        	};
-
-        	$(window).resize(sizeElements);
-        	sizeElements();
-
-        	var scrollInterval = false;
-        	$(document).mouseup(function() {
-        		try {
-        			clearInterval(scrollInterval);
-        		} catch(e) {}
-        	});
-
-        	$('#scrollPrev').mousedown(function(){
-        		scrollInterval = setInterval(function() {
-        			$('#contentHolder').scrollLeft($('#contentHolder').scrollLeft()-10);
-        		}, 20);
-        	});
-
-
-        	$('#scrollNext').mousedown(function(){
-        		scrollInterval = setInterval(function() {
-        			$('#contentHolder').scrollLeft($('#contentHolder').scrollLeft()+10);
-        		}, 20);
-        	});
-
-        });
-
-        </script>
 	</head>
 	
 	<body class="{% block body_class%}{% endblock%}">
@@ -67,12 +28,17 @@
 				{% endautoescape %}
 			</div>	
 			<h2 id="pageTitle">{% block pageTitle %}{% endblock %}</h2>
-			<div id="scrollControls">
-				<div id="scrollPrev"></div>
-				<div id="scrollNext"></div>
-			</div>
+			
 			{% block content %}
 			{% endblock %}
-		</div>				
+		</div>	
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>			
 	</body>
 </html>

@@ -92,6 +92,7 @@ class Block(models.Model):
         if self.block_type == 'html':
             return self.html
         elif self.block_type == 'tag_list':
+            context.tag_list = ""
             return content_models.Tag.render_list(context=context)
         elif self.block_type == 'menu':
             return self.menu.render(context=context)

@@ -1,17 +1,39 @@
 {% extends "base/template.base.html" %}
 
 
-{% block pageTitle%} {{page_title}} {% endblock%}
+{% block javascript %}
+
+<script type="text/javascript" src="{{ STATIC_URL}}base/js/jquery.masonry.min.js"></script>
+<script type="text/javascript">
+	
+	$(function() {
+		
+
+		var sizeElements = function() {
+    		$('#holder').width($(window).width()).height($(window).height());
+    		$('#contentHolder').width($(window).width() - 305);
+    		$('.entries').masonry({
+				  itemSelector: '.entryPreview',
+				  isFitWidth: true
+			});
+    	};
+
+    	$(window).resize(sizeElements);
+    	sizeElements();
+
+	});
+	
+</script>
+
+{% endblock %}
 
 {% block content %}
 <div id="contentHolder">
-	<div id="content">
 		<div class="entries">
 			{% for entry in entries %}
 				{% include 'content/entry.preview.html' %}
 			{% endfor %}
 		</div>
 		<div style="clear:both;"></div>
-	</div>
 </div>
 {% endblock %}

@@ -67,42 +67,6 @@ img {
 	position:relative;
 }
 
-#scrollControls {
-	position: absolute;
-	top: 25px;
-	right:20px;
-	width:45px;
-	height:20px;
-	z-index: 10;
-}
-
-#scrollPrev {
-	width:20px;
-	height:20px;
-	background-image:url('../images/prev.png');
-	background-position: top left;
-	position: absolute;
-	top:0px;
-	left:0px;
-	cursor: pointer;
-}
-
-#scrollPrev:hover, #scrollNext:hover {
-	background-position: bottom left;
-}
-
-
-#scrollNext {
-	width:20px;
-	height:20px;
-	background-image:url('../images/next.png');
-	background-position: top left;
-	position: absolute;
-	top:0px;
-	left:25px;
-	cursor: pointer;
-}
-
 #tagList li, #tagList {
 	list-style:none;
 	margin:0px;
@@ -163,4 +127,45 @@ img {
 
 .black a:hover {
 	color:#666666;
+}
+
+
+
+
+
+
+#scrollControls {
+	position: absolute;
+	top: 25px;
+	right:20px;
+	width:45px;
+	height:20px;
+	z-index: 10;
+}
+
+#scrollPrev {
+	width:20px;
+	height:20px;
+	background-image:url('../images/prev.png');
+	background-position: top left;
+	position: absolute;
+	top:0px;
+	left:0px;
+	cursor: pointer;
+}
+
+#scrollPrev:hover, #scrollNext:hover {
+	background-position: bottom left;
+}
+
+
+#scrollNext {
+	width:20px;
+	height:20px;
+	background-image:url('../images/next.png');
+	background-position: top left;
+	position: absolute;
+	top:0px;
+	left:25px;
+	cursor: pointer;
 }

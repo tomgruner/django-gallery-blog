@@ -13,12 +13,23 @@
 	left:280px;
 }
 
+.entryPreview {
+	float:left;
+	width:300px;
+	padding:25px;
+	text-align:center;
+}
+
+.entryPreviewTitle {
+	margin-top:0px;
+}
 
 .entryPreviewTitle a {
 	font-weight:normal;
 	color:#444;
 	font-size:12px;
 	text-decoration:none;
+
 }
 
 .entryFull {
@@ -39,8 +50,6 @@
 }
 
 
-
-
 .entryFullImageCaption {
 	font-weight:normal;
 	font-size:12px;
@@ -49,3 +58,11 @@
 	margin-top:0px;
 	padding-top:2px;
 }
+
+
+#entryLikeButton {
+	position: absolute;
+	top:665px;
+	right:30px;
+}
+

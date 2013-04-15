@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.conf import settings
 
 from sorl.thumbnail.admin import AdminImageMixin
 
@@ -19,6 +20,12 @@ class EntryAdmin(AdminImageMixin, admin.ModelAdmin):
     date_hierarchy = 'date'
     search_fields = ('title', 'seo_keywords', 'seo_description')
     prepopulated_fields = {"slug": ("title",)}
+
+    class Media:
+        js = [
+            '%sgrappelli/tinymce/jscripts/tiny_mce/tiny_mce.js' % settings.STATIC_URL,
+            '%sbase/js/tinymce_setup.js' % settings.STATIC_URL,
+        ]
     
 
 admin.site.register(models.Entry, EntryAdmin)

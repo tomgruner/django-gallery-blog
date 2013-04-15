@@ -8,7 +8,7 @@ def single_entry(request, slug):
     
     entry = get_object_or_404(models.Entry, slug=slug)
     
-    tag_slug = request.GET.get('tag_slug', None)
+    tag_slug = request.GET.get('tag', None)
 
     return render_to_response(
         'content/template.single_entry.html',
@@ -30,22 +30,10 @@ def list_view(request, tag_slug=None):
         entries = models.Entry.objects.filter(is_published=True, include_on_front_page=True)
         page_title = ''
     
-    column = 1
-    entries_by_column = []
-    columns = [1,2,3,4]
-    for entry in entries:
-        entries_by_column.append({'entry'   : entry, 
-                                  'column'  : column})
-        
-        if column < len(columns): 
-            column += 1 
-        else: 
-            column = 1;
-    
+  
     return render_to_response(
         'content/template.list.html',
-        {'entries_by_column': entries_by_column,
-         'columns'  :   columns,
+        {
          'entries' : entries,
          'page_title' : page_title,
          'tag_slug' : tag_slug

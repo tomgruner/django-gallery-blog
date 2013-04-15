@@ -1,15 +1,15 @@
 {% load thumbnail %}
 
-<div class="contentBox">
+<div class="entryPreview">
 	{% if entry.preview_image %}
-		{% thumbnail entry.preview_image "x500" as im %}
-			<a href="{{entry.get_absolute_url}}?tag_slug={{tag_slug}}">
+		{% thumbnail entry.preview_image "300" as im %}
+			<a href="{{entry.get_absolute_url}}?tag={{tag_slug}}">
 		    	<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
 		    </a>
 		{% endthumbnail %}
 	{% endif %}
 	<h3 class="entryPreviewTitle">
-		<a href="{{entry.get_absolute_url}}">{{entry.title}}</a>
+		<a href="{{entry.get_absolute_url}}?tag={{tag_slug}}">{{entry.title}}</a>
 	</h3>
 </div>
 
