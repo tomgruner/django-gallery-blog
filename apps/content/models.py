@@ -17,6 +17,8 @@ class Tag(models.Model):
         default = True
     )
 
+    order = models.IntegerField(default=0)
+
     @staticmethod
     def render_list(context):
         
@@ -31,34 +33,39 @@ class Tag(models.Model):
     def __unicode__(self):
         return unicode(self.tag)
 
+    class Meta:
+        ordering = ['order',]
+
 class Image(models.Model):
-    image       = ImageField(
+    image = ImageField(
         upload_to='images'
         )
-    caption     = models.TextField(
+    caption = models.TextField(
         max_length=1000, 
         blank=True
         )
-    entry       = models.ForeignKey(
+    entry = models.ForeignKey(
         'Entry'
         )
     
-    order = models.IntegerField()
+    order = models.IntegerField(default=0)
     
     class Meta:
         ordering = ['order',]
 
 # Create your models here.
 class Entry(models.Model):
-    title            = models.CharField(
+    title = models.CharField(
         max_length=255
         )
     
-    slug            = models.SlugField(
+    slug = models.SlugField(
         max_length=255
         )
+
+    order = models.IntegerField(default=0)
     
-    preview_image    = ImageField(
+    preview_image = ImageField(
         upload_to='images',
         blank=True,
         null=True
@@ -101,3 +108,4 @@ class Entry(models.Model):
     class Meta:
         verbose_name = 'Entry'
         verbose_name_plural = 'Entries'
+        ordering = ['order',]

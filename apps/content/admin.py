@@ -7,7 +7,8 @@ from . import models
 
 class TagAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("tag",)} 
-    list_display = ('tag', 'slug', 'show_in_tag_list')
+    list_display = ('tag', 'slug','order', 'show_in_tag_list')
+    list_editable = ('order',)
 
 class ImageInlineModelAdmin(AdminImageMixin, admin.TabularInline):
     model = models.Image
@@ -16,7 +17,8 @@ class ImageInlineModelAdmin(AdminImageMixin, admin.TabularInline):
 
 class EntryAdmin(AdminImageMixin, admin.ModelAdmin):
     inlines = [ImageInlineModelAdmin]
-    list_display = ('slug', 'title', 'tag_list', 'date', 'is_published', 'include_on_front_page')
+    list_display = ('slug', 'title', 'tag_list', 'date', 'order', 'is_published', 'include_on_front_page')
+    list_editable = ('order',)
     date_hierarchy = 'date'
     search_fields = ('title', 'seo_keywords', 'seo_description')
     prepopulated_fields = {"slug": ("title",)}
